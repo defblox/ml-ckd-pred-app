@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+   <body>
+       <div>
+         <h1>Model Prediction for Chronic Kidney Disease</h1>
+         <p>Predicted class: {{prediction}}</p>
+         <p>Probability for negative/positive, respectively: {{proba}}</p>
+         <p>Model Parameters</p>
+            <ul>
+              {% for key,value in params.items() %}
+              <li>
+                <span class="card-title">{{key}}:</span>{{value}}
+              </li>
+              {% endfor %}
+            </ul>
+        </div>
+   </body>
+</html>

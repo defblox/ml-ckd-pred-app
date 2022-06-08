@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Chronic Kidney Disease Prediction Feature Input Form</h3>
+    <div>
+      <form action="/pred" method="POST">
+        <label for="sg">Specific Gravity</label>
+        <select id="sg" name="sg">
+          <option value="1.005">1.005</option>
+          <option value="1.010">1.010</option>
+          <option value="1.015">1.015</option>
+          <option value="1.020">1.020</option>
+          <option value="1.025">1.025</option>
+        </select>
+        <br>
+        <label for="al">Albumin (in g/dL)</label>
+        <select id="al" name="al">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <br>
+        <label for="bu">Blood Urea (in mgs/dL)</label>
+        <input type="text" id="bu" name="bu"
+        <br>
+        <label for="sc">Serum Creatine (in mgs/dL)</label>
+        <input type="text" id="sc" name="sc"
+        <br>
+        <label for="sod">Sodium (in mEq/L)</label>
+        <input type="text" id="sod" name="sod">
+        <br>
+        <label for="hemo">Hemoglobin (in gms)</label>
+        <input type="text" id="hemo" name="hemo">
+        <br>
+        <label for="pcv">Packed Cell Volume</label>
+        <input type="text" id="pcv" name="pcv">
+        <br>
+        <label for="pc">Pus Cells</label>
+        <select id="pc" name="pc">
+          <option value="normal">normal</option>
+          <option value="abnormal">abnormal</option>
+        </select>
+        <br>
+        <label for="htn">Has Hypertension</label>
+        <select id="htn" name="htn">
+          <option value="no">no</option>
+          <option value="yes">yes</option>
+        </select>
+        <br>
+        <label for="dm">Has Diabetes Mellitus</label>
+        <select id="dm" name="dm">
+          <option value="no">no</option>
+          <option value="yes">yes</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+{% endblock %}
