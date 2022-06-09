@@ -59,7 +59,7 @@ def scale_data(data):
 
 def predict_case(data):
     result = loaded_model.predict(data)
-    if int(result)== 1:
+    if int(result)== 0:
         message ='Likely positve'
     else:
         message ='Likely negative'
@@ -93,10 +93,10 @@ def predict():
         scaled_data = scale_data(encoded)
         df = drop_features(scaled_data)
         result_list = predict_case(df)
-        if int(result_list[0])== 0:
-            prediction ='Patient may have Chronic Kidney Disease'
-        else:
-            prediction ='Patient likely does not have Chronic Kidney Disease'
+        # if int(result_list[0])== 1:
+        #     prediction ='Patient may have Chronic Kidney Disease'
+        # else:
+        #     prediction ='Patient likely does not have Chronic Kidney Disease'
         return render_template("result.html", prediction = result_list[1], proba = result_list[2], params = get_model_params())
 
 if __name__ == '__main__':
