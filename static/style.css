@@ -70,3 +70,90 @@ a#pdf:hover { background: #222; }
 /* --// override to force 1/8th width grids -- */
 .yui-gf .yui-u{width:80.2%;}
 .yui-gf div.first{width:12.3%;}
+
+.menu {
+    display: inline-block;
+    mr-auto
+}
+
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li.nav {
+  float: left;
+}
+
+li.nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li.nav a:hover {
+  background-color: #111;
+}
+
+.form-container {
+  width: 300px;
+  padding-left: 50px;
+}
+
+.form-container input {
+  width: 50%;
+
+}
+
+input.submit {
+  width: 25%;
+  align: center;
+}
+
+div.form-container {
+  text-align: left;
+}
+
+input[type=submit] {
+  background-color: #333;
+  border: none;
+  color: white;
+  height: 25px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/*predictions*/
+.predict {
+  width: 100%;
+  padding-left: 50px;
+  font-size: 122%;
+}
+
+.form-container input {
+  width: 50%;
+
+}
+
+div.predict {
+  text-align: left;
+}
+
+.model-params {
+  padding-left: 3em;
+}
+
+.params {
+  border-bottom: none;
+}
+
+h1.pred {
+  text-align: center;
+}

@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
 <h3>Chronic Kidney Disease Prediction Feature Input Form</h3>
-    <div>
+    <div class="form-container">
       <form action="/pred" method="POST">
-        <label for="sg">Specific Gravity</label>
+        <label for="sg">Specific Gravity</label><br>
         <select id="sg" name="sg">
           <option value="1.005">1.005</option>
           <option value="1.010">1.010</option>
           <option value="1.015">1.015</option>
           <option value="1.020">1.020</option>
           <option value="1.025">1.025</option>
-        </select>
-        <br>
-        <label for="al">Albumin (in g/dL)</label>
+        </select><br>
+<br>
+        <label for="al">Albumin (in g/dL)</label><br>
         <select id="al" name="al">
           <option value="0">0</option>
           <option value="1">1</option>
@@ -20,42 +20,43 @@
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
-        </select>
-        <br>
-        <label for="bu">Blood Urea (in mgs/dL)</label>
-        <input type="text" id="bu" name="bu"
-        <br>
-        <label for="sc">Serum Creatine (in mgs/dL)</label>
-        <input type="text" id="sc" name="sc"
-        <br>
-        <label for="sod">Sodium (in mEq/L)</label>
-        <input type="text" id="sod" name="sod">
-        <br>
-        <label for="hemo">Hemoglobin (in gms)</label>
-        <input type="text" id="hemo" name="hemo">
-        <br>
-        <label for="pcv">Packed Cell Volume</label>
-        <input type="text" id="pcv" name="pcv">
-        <br>
-        <label for="pc">Pus Cells</label>
-        <select id="pc" name="pc">
+        </select><br>
+<br>
+        <label for="bu">Blood Urea (in mgs/dL)</label><br>
+        <span><input type="text" id="bu" name="bu" placeholder="eg. 25"></span><br>
+<br>
+
+        <label for="sc">Serum Creatine (in mgs/dL)</label><br>
+        <span><input type="text" id="sc" name="sc" placeholder="eg. 1.2"></span><br>
+<br>
+        <label for="sod">Sodium (in mEq/L)</label><br>
+        <span><input type="text" id="sod" name="sod" placeholder="eg. 110"></span><br>
+<br>
+        <label for="hemo">Hemoglobin (in gms)</label><br>
+        <span><input type="text" id="hemo" name="hemo" placeholder="eg. 10.5"></span><br>
+<br>
+        <label for="pcv">Packed Cell Volume</label><br>
+        <span><input type="text" id="pcv" name="pcv" placeholder="eg. 29"></span><br>
+<br>
+        <label for="pc">Pus Cells</label><br>
+        <span><select id="pc" name="pc">
           <option value="normal">normal</option>
           <option value="abnormal">abnormal</option>
-        </select>
-        <br>
-        <label for="htn">Has Hypertension</label>
-        <select id="htn" name="htn">
+        </select></span><br>
+<br>
+        <label for="htn">Has Hypertension</label><br>
+        <span><select id="htn" name="htn">
           <option value="no">no</option>
           <option value="yes">yes</option>
-        </select>
-        <br>
-        <label for="dm">Has Diabetes Mellitus</label>
-        <select id="dm" name="dm">
+        </select></span><br>
+<br>
+        <label for="dm">Has Diabetes Mellitus</label><br>
+        <span><select id="dm" name="dm">
           <option value="no">no</option>
           <option value="yes">yes</option>
-        </select>
-        <br>
-        <input type="submit" value="Submit">
+        </select></span><br>
+<br>
+        <input class="submit" type="submit" value="Submit">
       </form>
     </div>
 {% endblock %}
