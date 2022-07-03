@@ -7,10 +7,10 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 import pandas as pd
 import numpy as np
-import pickle
+import joblib
 import sys
 
-app = Flask(__name__)
+application = Flask(__name__)
 #nav = Navigation(app)
 
 #nav.Bar('top', [
@@ -18,9 +18,14 @@ app = Flask(__name__)
 #    nav.Item('ML Test', 'input')
 #])
 
-loaded_model = pickle.load(open("model_pkl", "rb"))
-encoder = pickle.load(open("model_ohe", "rb"))
-scaler = pickle.load(open("model_scaler", "rb"))
+m_file = open("model_pkl", "rb")
+e_file = open("model_ohe", "rb")
+s_file = open("model_scaler", "rb")
+
+loaded_model = joblib.load(m_file)
+encoder = joblib.load(e_file)
+scaler = joblib.load(s_file)
+
 scaled_vars = ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo',
        'pcv', 'pc_normal', 'pcc_present', 'ba_present', 'htn_yes', 'dm_yes',
        'cad_yes', 'appet_poor', 'ane_yes', 'pe_yes']
@@ -71,19 +76,19 @@ def get_model_params():
     params = loaded_model.get_params()
     return params
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('about.html')
 
-@app.route('/about')
+@application.route('/about')
 def about():
         return render_template('about.html')
 
-@app.route('/input')
+@application.route('/input')
 def input():
     return render_template('user-input.html')
 
-@app.route('/pred', methods = ['POST'])
+@application.route('/pred', methods = ['POST'])
 def predict():
     if request.method == 'POST':
         to_predict_list = request.form.to_dict()
@@ -100,4 +105,7 @@ def predict():
         return render_template("result.html", prediction = result_list[1], proba = result_list[2], params = get_model_params())
 
 if __name__ == '__main__':
-    app.run()
+    # Setting debug to True enables debug output. This line should be
+    # removed before deploying a production app.
+    application.debug = True
+    application.run(host="localhost", port=5000, debug=True)
