@@ -100,4 +100,4 @@ def predict():
         return render_template("result.html", prediction = result_list[1], proba = result_list[2], params = get_model_params())
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
