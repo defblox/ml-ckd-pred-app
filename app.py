@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, jsonify
-from flask_navigation import Navigation
+#from flask_navigation import Navigation
 from sklearn.linear_model import LogisticRegression
 from sklearn import svm
 from sklearn.svm import SVC
@@ -11,12 +11,12 @@ import pickle
 import sys
 
 app = Flask(__name__)
-nav = Navigation(app)
+#nav = Navigation(app)
 
-nav.Bar('top', [
-    nav.Item('About', 'index'),
-    nav.Item('ML Test', 'input')
-])
+#nav.Bar('top', [
+#    nav.Item('About', 'index'),
+#    nav.Item('ML Test', 'input')
+#])
 
 loaded_model = pickle.load(open("model_pkl", "rb"))
 encoder = pickle.load(open("model_ohe", "rb"))
