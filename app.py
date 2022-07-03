@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, jsonify
-from flask.ext.navigation import Navigation
+from flask_navigation import Navigation
 from sklearn.linear_model import LogisticRegression
 from sklearn import svm
 from sklearn.svm import SVC
